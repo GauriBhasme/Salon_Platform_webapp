@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flip Page with Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100vh;
+            /* display: flex;
+    justify-content: center;
+    align-items: center; */
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgb(103, 103, 238), black);
+        }
+
+        .container {
+            perspective: 1000px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           /* position: relative;*/
+        }
+
+        .front-page,
+        .login-page {
+            width: 90%;
+            max-width: 400px;
+            height: 90%;
+            max-height: 500px;
+            /*position: absolute;*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            transition: transform 0.8s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .front-page {
+            background-color: #f0f0f0;
+            transform: rotateY(0deg);
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+            background-color: #87CEEB;
+        }
+
+        .login-page {
+            background-color: #87CEEB;
+            transform: rotateY(180deg);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Responsive Flexbox for option buttons */
+        .option {
+            width: 200px;
+            height: 100px;
+            background-color: #2b0b83;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .option:hover {
+            background-color: #45a049;
+        }
+
+        .container.flipped .front-page {
+            transform: rotateY(-180deg);
+        }
+
+        .container.flipped .login-page {
+            transform: rotateY(0deg);
+        }
+
+        /* Login form styling */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 250px;
+            text-align: left;
+        }
+
+        .login-form label {
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .login-form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .login-form button {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            .front-page,
+            .login-page {
+                width: 100%;
+                height: 90%;
+            }
+
+            .option {
+                width: 80px;
+                height: 80px;
+            }
+
+            .login-form {
+                max-width: 200px;
+            }
+
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            width: 100vw;
+            text-align: center;
+        }
+        i{
+            font-size: 4rem;
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <h1 id="welcome-msg">Welcome to [Your Salon Name]</h1>
+        <p id="tagline">Your beauty, our duty!</p>
+    </header>
+    <div class="container">
+        <div class="front-page" id="frontPage">
+            <div class="option" id="customer">
+                <i class="fa-solid fa-user"></i>
+                <h2>Customer</h2>
+            </div>
+            <div class="option" id="salonShop">
+                <i class="fa-solid fa-house"></i>
+                <h2>Salon Shop</h2>
+            </div>
+        </div>
+        <div class="login-page" id="loginPage">
+            <h2>Login</h2>
+            <form class="login-form" id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="entry.js"></script>
+</body>
+
+</html>

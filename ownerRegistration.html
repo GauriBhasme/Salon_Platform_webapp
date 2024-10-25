@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Owner Form</title>
+    <style>
+                body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+        .salon-owner-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .salon-owner-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .salon-owner-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .salon-owner-form input, 
+        .salon-owner-form select, 
+        .salon-owner-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .salon-owner-form button,.regBtn button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .salon-owner-form button:hover {
+            background-color: #218838;
+        }
+        .extra-service {
+            margin-bottom: 15px;
+        }
+
+        footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    
+
+}
+footer ul li{
+    list-style: none;
+    
+}
+footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+main{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* gap: 10%; */
+}
+main .image{
+    /* height: auto; */
+    /* width: 20%; */
+}
+main .content{
+    padding: 2rem;
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+main li{
+    /* list-style: none; */
+    font-weight: 500;
+}
+.regBtn {
+
+display: flex;
+align-items: center;
+justify-content: center;
+width: 90vw;
+}
+.regBtn button{
+    width: 30%;
+    margin: 2rem;
+}
+
+    </style>
+   
+</head>
+<body>
+    <header>
+
+        <h1 id="welcome-msg">Welcome to [Your Salon Name]</h1>
+        <p id="tagline">Your beauty, our duty!</p>
+    </header>
+
+    <main>
+        <div class="image"><img src="handShake.jpg" height="100%" width="100%"></div>
+        <div class="content"><h2>Why should You Connect With uS ?</h2>
+        <ul><li>Increased Visibility,Reach a broader audience</li>
+            <li>Online Booking: Enable 24/7 appointment scheduling</li>
+            <li>Enhanced Customer Experience: Collect reviews and offer personalized promotions </li>
+
+            <li>Marketing Tools: Access email/SMS marketing and social media integration</li>
+            
+            <li>Data Analytics: Gain insights into customer behavior and track marketing performance.</li>
+            <li>Streamlined Payments: Secure payment processing and improved management of inventory and staff</li>
+  
+            </ul></div>
+    </main>
+    <hr>
+<div class="regBtn"><button>Register Your Shop</button></div>
+<div class="salon-owner-form">
+    <h2>Salon Owner Information Form</h2>
+    <form action="submit-salon-owner.php" method="POST" onsubmit="submitForm(event)">
+        <!-- Salon Name -->
+        <label for="salon-name">Salon Name:</label>
+        <input type="text" id="salon-name" name="salon_name" required>
+
+        <!-- Owner Name -->
+        <label for="owner-name">Owner Name:</label>
+        <input type="text" id="owner-name" name="owner_name" required>
+
+        <!-- Services Offered (Multiple Selection + Extra Services) -->
+        <label for="services">Services Offered:</label>
+        <select id="services" name="services[]" multiple size="5" required>
+            <option value="haircut">Haircut</option>
+            <option value="shave">Shave</option>
+            <option value="haircolor">Hair Color</option>
+            <option value="facial">Facial</option>
+            <option value="manicure">Manicure</option>
+            <option value="pedicure">Pedicure</option>
+            <option value="massage">Massage</option>
+        </select>
+        <div id="service-section"></div>
+        <button type="button" onclick="addServiceField()">Add Another Service</button>
+
+        <!-- Working Time -->
+        <label for="working-time">Working Time:</label>
+        <input type="time" id="working-time-start" name="working_time_start" required> 
+        to 
+        <input type="time" id="working-time-end" name="working_time_end" required>
+
+        <!-- Address -->
+        <label for="address">Salon Address:</label>
+        <textarea id="address" name="address" rows="4" placeholder="Enter salon address" required></textarea>
+
+        <button type="submit">Submit Information</button>
+    </form>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+    function addServiceField() {
+        var newServiceField = document.createElement('input');
+        newServiceField.type = 'text';
+        newServiceField.name = 'services[]';
+        newServiceField.placeholder = 'Enter additional service';
+        newServiceField.className = 'extra-service';
+        document.getElementById('service-section').appendChild(newServiceField);
+    }
+
+    async function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(event.target); // Get form data
+
+        try {
+            const response = await fetch('submit-salon-owner.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const result = await response.text(); // Get response from server
+                alert('Form submitted successfully: ' + result);
+            } else {
+                alert('Failed to submit form. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while submitting the form.');
+        }
+    }
+
+    let btnReg = document.querySelector(".regBtn");
+    let form = document.querySelector(".salon-owner-form");
+    btnReg.addEventListener("click",()=>{
+form.style.display ="block";
+    }) 
+</script>
+<script src="entry.js"></script>
+</body>
+</html>

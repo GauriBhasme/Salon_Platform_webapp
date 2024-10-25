@@ -1,0 +1,92 @@
+[4:12 am, 23/10/2024] HARSHAD 💙: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Booking Website</title>
+   
+    <style>
+        
+    <body>
+    <div class="language-switch">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('es')">Hindi</button>
+    </div>
+
+    
+    <!-- Services Section -->
+    <section class="services container">
+        <h2 id="services-title">Our Services</h2>
+        <div class="ser…
+
+
+  
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Book Appointment</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="haircut.jpg" alt="Haircut" width="10%">
+                <h3>Haircut</h3>
+                <p>Get the perfect cut that matches your style.</p>
+            </div>
+            <div class="service-item">
+                <img src="manicure.jpg" alt="Manicure">
+                <h3>Manicure</h3>
+                <p>Pamper your hands with our premium manicure services.</p>
+            </div>
+            <div class="service-item">
+                <img src="facial.jpg" alt="Facial">
+                <h3>Facial</h3>
+                <p>Rejuvenate your skin with our relaxing facials.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking container">
+        <h2>Book an Appointment</h2>
+        <form class="booking-form" action="#" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required>
+                <option value="">-- Select a Service --</option>
+                <option value="haircut">Haircut</option>
+                <option value="manicure">Manicure</option>
+                <option value="facial">Facial</option>
+            </select>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 [Your Salon Name]. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

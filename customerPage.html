@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Booking Website</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="main-icon.png" rel="Icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1 id="welcome-msg">Welcome to [Your Salon Name]</h1>
+        <p id="tagline">Your beauty, our duty!</p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="sections">
+            <a href="customerPage.html" id="home-link">Home</a>
+            <a href="#" id="services-link">Services</a>
+            <a href="#" id="book-link">Book Appointment</a>
+            <a href="contactForm.html" id="contact-link">Contact</a>
+        </div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search here">
+            <div class="searchDiv">
+                <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="content">
+            <span>Select The Best Salon</span><br>
+            <span>In Your Area</span><br>
+            <!-- <a href="registerForm2.html"><button id="registerBtn">Book an Appointment</button></a> -->
+        </div>
+    </div>
+
+    <!-- Salon Cards -->
+    <h2>Choose the Best And Trusted</h2>
+    <div class="container">
+        <a href="shopInfo.html">
+            <div class="card">
+                <img src="salon1.png" alt="Card Image 1">
+                <div class="card-content">
+                    <h3>Toni & Guy Essensuals</h3>
+                    <p>Top-notch services for all your beauty needs.</p>
+                    <a href="#" class="view-more">View More</a>
+                    <i class="fa-solid fa-map-location-dot" id="map"></i>
+                </div>
+            </div>
+        </a>
+
+        <div class="card">
+            <img src="salon2.png" alt="Card Image 2">
+            <div class="card-content">
+                <h3>Pro Plus Smart Salon</h3>
+                <p>Exclusive and personalized beauty care.</p>
+                <a href="#" class="view-more">View More</a>
+                <i class="fa-solid fa-map-location-dot" id="map"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="salon3.png" alt="Card Image 3">
+            <div class="card-content">
+                <h3>Mayra Unisex Salon</h3>
+                <p>Unisex beauty services for all your needs.</p>
+                <a href="#" class="view-more">View More</a>
+                <i class="fa-solid fa-map-location-dot" id="map"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="containerForm">
+        <h1>Feedback Form</h1>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

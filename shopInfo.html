@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+            max-width: 800px;
+
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media screen(max-width:600px) {
+            .card {
+                width: 80%;
+            }
+
+        }
+
+        h3 {
+            margin: 0 0 10px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .upper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5%;
+
+        }
+
+        .containerDiv {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        #registerBtn {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            border: 2px solid black;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            /*margin: 2rem;*/
+            cursor: pointer;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Company Name</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="upper">
+        <div class="left">
+            <h2>Toni & Guy Essensuals</h2>
+            <p>This is a brief description of the card content.</p>
+        </div>
+        <div class="right"><img src="salon1.png"></div>
+    </div>
+
+    <div class="containerDivs">
+        <div class="card-container">
+            <div class="card">
+                <h2>About Us</h2>
+                <p>Welcome to our company! We provide high-quality services to help you succeed.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero odit sit nemo aperiam libero
+                    illo
+                    fugiat facere dolores iure eius natus voluptatum distinctio, repudiandae ipsam consequatur veniam id
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero odit sit nemo aperiam libero
+                    illo
+                    fugiat facere dolores iure eius natus voluptatum distinctio, repudiandae ipsam consequatur veniam id
+                </p>
+            </div>
+            <div class="card">
+                <h2>Our Services</h2>
+                <ul>
+                    <li><span><b>Haircut and Styling :</b></span>
+                        Description: Our skilled stylists offer personalized haircuts for all lengths and styles,
+                        ensuring
+                        you leave the salon looking your best.
+
+                    <li><span><b>Color Services :</b></span>
+                        Description: Transform your hair with our professional coloring services, including highlights,
+                        lowlights, balayage, and full-color applications. .
+                    </li>
+                    <li><span><b>Facials and Skincare :</b></span>
+                        Description: Indulge in our relaxing facial treatments tailored to your skin type. Our
+                        estheticians
+                        .</li>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p>Email: info@company.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="card">
+                <h2>Our Address</h2>
+                <p>123 Main Street, City, Country</p>
+            </div>
+        </div>
+    </div>
+    <a href="registerForm.html"><button id="registerBtn">Book an Appointment</button></a>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
